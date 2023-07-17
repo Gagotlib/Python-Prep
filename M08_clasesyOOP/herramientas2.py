@@ -1,4 +1,4 @@
-class herramientas2:
+class Herramientas2:
     def __init__(self, listavalores):
         self.listavalores = listavalores 
 
