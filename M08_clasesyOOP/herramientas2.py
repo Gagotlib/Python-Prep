@@ -1,14 +1,18 @@
 class Herramientas2:
     def __init__(self, listavalores):
-        if type(listavalores) != list:
+        if (type(listavalores) != list):
             self.listavalores = []
             raise ValueError("se ha creado lista vacia. Se espera lista de numeros")
         else:
             self.listavalores = listavalores
-        
-        self.listavalores = listavalores 
+
+        for i in self.listavalores:
+            if type(i) != int:
+                raise ValueError("la lista debe ser numeros enteros") 
 
     def convertir_grados(self, origen, destino):
+        
+        
         for i in self.listavalores:
             print(i,"grados", origen, "son",self.__convertir_grados(i,origen,destino), "grados", destino)
 
