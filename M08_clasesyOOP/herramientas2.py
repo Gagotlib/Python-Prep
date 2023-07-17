@@ -1,5 +1,11 @@
 class Herramientas2:
     def __init__(self, listavalores):
+        if type(listavalores) != list:
+            self.listavalores = []
+            raise ValueError("se ha creado lista vacia. Se espera lista de numeros")
+        else:
+            self.listavalores = listavalores
+        
         self.listavalores = listavalores 
 
     def convertir_grados(self, origen, destino):
@@ -30,9 +36,9 @@ class Herramientas2:
         return valor_destino
         
 
-    def masrepetido(self, listavalores):
+    def masrepetido(self,):
         contador = {}
-        for i in listavalores:
+        for i in self.listavalores:
             if i in contador:
                 contador[i] +=1
         
@@ -52,9 +58,9 @@ class Herramientas2:
     def encontrarprimo(self):
         for i in self.listavalores:
             if (self.__encontrarprimo(i)):
-                return print(i,"es primo")
+                print(i,"es primo")
             else:
-                return print(i,"no es primo")
+                print(i,"no es primo")
         
                 
     
