@@ -11,8 +11,12 @@ class Herramientas2:
                 raise ValueError("la lista debe ser numeros enteros") 
 
     def convertir_grados(self, origen, destino):
+        if origen not in ["Celsius", "Farenheit", "Kelvin"]:
+            raise ValueError("valor de origen esperado: 'Celsius', 'Farenheit', 'Kelvin' ")
         
-        
+        if destino not in ["Celsius", "Farenheit", "Kelvin"]:
+            raise ValueError("valor de destino esperado: 'Celsius', 'Farenheit', 'Kelvin' ")
+
         for i in self.listavalores:
             print(i,"grados", origen, "son",self.__convertir_grados(i,origen,destino), "grados", destino)
 
