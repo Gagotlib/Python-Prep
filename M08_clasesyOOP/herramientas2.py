@@ -52,9 +52,10 @@ class Herramientas2:
     def encontrarprimo(self):
         for i in self.listavalores:
             if (self.__encontrarprimo(i)):
-                print(i,"es primo")
+                return print(i,"es primo")
             else:
-                print(i,"no es primo")
+                return print(i,"no es primo")
+        
                 
     
     def __encontrarprimo(self,nro):
