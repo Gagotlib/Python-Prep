@@ -2,7 +2,7 @@ class Herramientas2:
     def __init__(self, listavalores):
         if (type(listavalores) != list):
             self.listavalores = []
-            raise ValueError("se ha creado lista vacia. Se espera lista de numeros")
+            raise ValueError("Se espera lista de numeros")
         else:
             self.listavalores = listavalores
 
@@ -64,11 +64,26 @@ class Herramientas2:
         return nrepeticionesmax, elmasrepetido
 
     def encontrarprimo(self):
+        listaprimos = []
+        numerosprimos = []
+        numerosnoprimos = []
         for i in self.listavalores:
             if (self.__encontrarprimo(i)):
-                print(i,"es primo")
+                listaprimos.append(True)
+                numerosprimos.append(i)
+
             else:
-                print(i,"no es primo")
+                listaprimos.append(False)
+                numerosnoprimos.append(i)
+        
+        for i in numerosprimos:
+            print(i," es primo")
+        
+        for i in numerosnoprimos:
+            print( i, "no es primo")
+
+        return listaprimos
+        
         
                 
     
@@ -77,8 +92,5 @@ class Herramientas2:
         for div in range(2, nro):
             if (nro % div == 0):
                 primo = False
-        if (primo):
-            return primo
-        else:
-            return False
+        return primo
         
